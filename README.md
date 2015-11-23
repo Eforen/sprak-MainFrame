@@ -74,6 +74,29 @@ Cook Sites
 -------------------
 Basically this is a networked oven that is used by the server for cooking out code into items
 
+### Possible Workflow
+The Stoves do not have the ability to directly connect to the server but they may beable to use the objects they connect to for that.
+
+
+```sequence
+Note Right of Cooker: New object present
+Cooker->Object: Do you have cookOS running?
+Object-Cooker: No
+Cooker-Object: Well then do you have the method connect?
+Object-Cooker: Yes
+Cooker-Object: Then here is your new code wrapper
+Note Right of Cooker: Connect("MainFrame").cookerPing(ObjType)
+Note Right of Cooker: if(false) then
+Note Right of Cooker: Old Code Here
+Note Right of Cooker: End
+Object-MainFrame: Cooker said I am a <type> and wants to install
+MainFrame-Object: Your code should be ...
+Object-Cooker: My code should be ...
+Cooker-Object: Your code is now ...
+Cooker-Object: Tell the server your now installed
+Object-MainFrame: I am now installed with the code.
+```
+
 > **Not yet implemented**
 > 
 > - This feature has not been coded yet why not fork the repo and try to make one your self?
